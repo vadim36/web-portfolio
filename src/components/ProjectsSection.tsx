@@ -1,3 +1,4 @@
+import { getProjects } from "@/entities/project";
 import { Badge, Button, Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../shared";
 import { useState } from "react";
 
@@ -20,41 +21,17 @@ const tags: string[] = [
   "REST API",
 ];
 
-const projects = [
-  {
-    title: "E-Commerce Platform",
-    description:
-      "A full-featured online store with payment processing and inventory management.",
-    tags: ["Next.js", "Stripe", "MongoDB"],
-    image: "/placeholder.svg?height=200&width=300",
-    github: "https://github.com/yourusername/project1",
-    demo: "https://project1.com",
-  },
-  {
-    title: "Task Management App",
-    description:
-      "A collaborative task management tool with real-time updates and team features.",
-    tags: ["React", "Firebase", "Tailwind CSS"],
-    image: "/placeholder.svg?height=200&width=300",
-    github: "https://github.com/yourusername/project2",
-    demo: "https://project2.com",
-  },
-  {
-    title: "Portfolio Website",
-    description:
-      "A responsive portfolio website showcasing projects and skills.",
-    tags: ["Next.js", "Tailwind CSS", "Framer Motion"],
-    image: "/placeholder.svg?height=200&width=300",
-    github: "https://github.com/yourusername/project3",
-    demo: "https://project3.com",
-  },
-];
+const { ok, data: projects, err } = getProjects();
 
 export function ProjectsSection() {
   const [currentTag, setCurrentTag] = useState<string[]>([
     "JavaScript",
     "React",
   ]);
+
+  if (!ok) {
+    return <h1>{err}</h1>
+  }
 
   return (
     <section id="projects" className="py-12 md:py-24 scroll-mt-16">
@@ -89,7 +66,7 @@ export function ProjectsSection() {
       </div>
       <div className="border-2 my-5"></div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project, index) => (
+        {projects!.map((project, index) => (
           <Card key={index} className="overflow-hidden">
             <div className="aspect-video relative">
               <img
@@ -126,11 +103,9 @@ export function ProjectsSection() {
               </Button>
               <Button size="sm" asChild>
                 <a
-                  href={project.demo}
-                  target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Demo
+                  Open
                 </a>
               </Button>
             </CardFooter>

@@ -1,4 +1,4 @@
-import { Button, Card, CardContent } from "../shared";
+import { Button, Card, CardContent } from "@/shared";
 
 export function HeroSection() {
   return (

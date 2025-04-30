@@ -1,0 +1,26 @@
+[
+  {
+    "title": "E-Commerce Platform",
+    "description":
+      "A full-featured online store with payment processing and inventory management.",
+    "tags": ["Next.js", "Stripe", "MongoDB"],
+    "image": "/placeholder.svg?height=200&width=300",
+    "github": "https://github.com/yourusername/project1"
+  },
+  {
+    "title": "Task Management App",
+    "description":
+      "A collaborative task management tool with real-time updates and team features.",
+    "tags": ["React", "Firebase", "Tailwind CSS"],
+    "image": "/placeholder.svg?height=200&width=300",
+    "github": "https://github.com/yourusername/project2"
+  },
+  {
+    "title": "Portfolio Website",
+    "description":
+      "A responsive portfolio website showcasing projects and skills.",
+    "tags": ["Next.js", "Tailwind CSS", "Framer Motion"],
+    "image": "/placeholder.svg?height=200&width=300",
+    "github": "https://github.com/yourusername/project3"
+  }
+]

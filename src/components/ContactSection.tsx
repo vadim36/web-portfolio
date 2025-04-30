@@ -1,4 +1,4 @@
-import { Button, Card, CardContent, CardDescription, CardHeader, CardTitle } from "../shared";
+import { Button, Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/shared";
 
 export function ContactSection() {
   return (
