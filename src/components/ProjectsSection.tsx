@@ -1,5 +1,14 @@
 import { getProjects } from "@/entities/project";
-import { Badge, Button, Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "../shared";
+import {
+  Badge,
+  Button,
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "../shared";
 import { useState } from "react";
 
 const tags: string[] = [
@@ -30,7 +39,7 @@ export function ProjectsSection() {
   ]);
 
   if (!ok) {
-    return <h1>{err}</h1>
+    return <h1>{err}</h1>;
   }
 
   return (
@@ -98,16 +107,12 @@ export function ProjectsSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Code
+                  Код
                 </a>
               </Button>
-              <Button size="sm" asChild>
-                <a
-                  rel="noopener noreferrer"
-                >
-                  Open
-                </a>
-              </Button>
+              {project.docsId && <Button size="sm" asChild>
+                <a rel="noopener noreferrer">Читать подробнее</a>
+              </Button>}
             </CardFooter>
           </Card>
         ))}

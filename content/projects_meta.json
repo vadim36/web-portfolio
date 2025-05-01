@@ -5,7 +5,8 @@
       "A full-featured online store with payment processing and inventory management.",
     "tags": ["Next.js", "Stripe", "MongoDB"],
     "image": "/placeholder.svg?height=200&width=300",
-    "github": "https://github.com/yourusername/project1"
+    "github": "https://github.com/yourusername/project1",
+    "docsId": "e-commerce"
   },
   {
     "title": "Task Management App",
@@ -13,7 +14,7 @@
       "A collaborative task management tool with real-time updates and team features.",
     "tags": ["React", "Firebase", "Tailwind CSS"],
     "image": "/placeholder.svg?height=200&width=300",
-    "github": "https://github.com/yourusername/project2"
+    "github": "https://github.com/yourusername/project2"  
   },
   {
     "title": "Portfolio Website",

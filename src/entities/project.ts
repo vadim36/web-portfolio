@@ -8,6 +8,7 @@ const ProjectSchema = z.object({
   tags: z.array(z.string()).nonempty(),
   image: z.string(),
   github: z.string(),
+  docsId: z.string().optional()
 });
 
 export type Project = z.infer<typeof ProjectSchema>;
