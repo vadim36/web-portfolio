@@ -1,16 +1,31 @@
 import { Button, Card, CardContent } from "@/shared";
+import Typewriter from "typewriter-effect";
 
 export function HeroSection() {
   return (
-    <section className="flex flex-col md:flex-row py-12 md:py-24 lg:py-32 gap-5 h-dvh items-center px-20">
-      <div className="text-center flex-[2]">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
+    <section className="flex flex-col lg:flex-row py-6 md:py-24 lg:py-32 gap-10 min-h-dvh items-center md:px-10 justify-around">
+      <div className="lg:flex-[2] text-center">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold my-2">
           Привет, я Вадим
         </h1>
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">
-          Я Full-stack разработчик
-        </h1>
-        <div className="flex flex-col sm:flex-row gap-4 mt-5 items-center sm:justify-center">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold my-5">
+          <Typewriter
+            onInit={(typewriter) => {
+              typewriter
+                .typeString("Я full-stack разработчик,")
+                .pauseFor(1500)
+                .typeString(
+                  "создаю масштабируемое ПО с фокусом на производительность"
+                )
+                .start();
+            }}
+            options={{
+              loop: true,
+              delay: 100,
+            }}
+          />
+        </h2>
+        <div className="flex gap-4 mt-5 justify-center flex-col md:flex-row items-center">
           <Button asChild size="lg">
             <a href="#contact">Связаться со мной</a>
           </Button>
@@ -20,7 +35,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      <Card id="about" className="flex-[1]">
+      <Card id="about" className="lg:flex-[1.25] ">
         <CardContent>
           <h2 className="text-3xl font-bold mb-4">Обо мне</h2>
           <p className="text-muted-foreground mb-6">

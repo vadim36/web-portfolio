@@ -43,7 +43,7 @@ export function ProjectsSection() {
   }
 
   return (
-    <section id="projects" className="py-12 md:py-24 scroll-mt-16">
+    <section className="mt-15" id="projects">
       <h2 className="text-3xl font-bold tracking-tighter mb-8 text-center">
         Избранные проекты
       </h2>
@@ -51,7 +51,11 @@ export function ProjectsSection() {
         Здесь расскажем какие я разрабатывал проекты, какие проблемы решил и
         какой опыт получил
       </h3>
-      <div className="flex gap-2">
+      <div className="border-2 my-5"></div>
+      <h3 className="text-2xl font-bold tracking-tighter mb-8 text-center">
+        Основные технологии
+      </h3>
+      <div className="flex gap-2 flex-wrap">
         {tags.map((skill) => (
           <Badge
             className="text-2xl"
@@ -117,6 +121,7 @@ export function ProjectsSection() {
           </Card>
         ))}
       </div>
+      <div className="border-2 my-5"></div>
     </section>
   );
-}
+};
