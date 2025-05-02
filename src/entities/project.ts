@@ -1,14 +1,15 @@
 import z from "zod";
-import projects_json from "@/../content/projects_meta.json";
+import projects_json from "@/../content/projects.json";
 import { Maybe } from "@/shared";
 
 const ProjectSchema = z.object({
   title: z.string().min(3).max(64),
   description: z.string().max(256).optional(),
   tags: z.array(z.string()).nonempty(),
-  image: z.string(),
+  image: z.string().optional(),
   github: z.string(),
-  docsId: z.string().optional()
+  articleId: z.string().optional(),
+  keyFeatures: z.array(z.string()),
 });
 
 export type Project = z.infer<typeof ProjectSchema>;

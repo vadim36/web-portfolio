@@ -1,6 +1,5 @@
-"use client"
-
 import { getProjects } from "@/entities/project";
+import { getTags } from "@/entities/tag";
 import {
   Badge,
   Button,
@@ -11,37 +10,43 @@ import {
   CardHeader,
   CardTitle,
 } from "@/shared";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
-const tags: string[] = [
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Next.js",
-  "Node.js",
-  "Express",
-  "MongoDB",
-  "PostgreSQL",
-  "HTML5",
-  "CSS3",
-  "Tailwind CSS",
-  "Git",
-  "AWS",
-  "Docker",
-  "GraphQL",
-  "REST API",
-];
-
-const { ok, data: projects, err } = getProjects();
+const { ok: projectsOk, data: projects, err: projectsErr } = getProjects();
+const { ok: tagsOk, data: tags, err: tagsErr } = getTags();
 
 export function ProjectsSection() {
-  const [currentTag, setCurrentTag] = useState<string[]>([
-    "JavaScript",
+  if (!projectsOk && !tagsOk) {
+    return (
+      <h1>
+        {projectsErr} {tagsErr}
+      </h1>
+    );
+  }
+
+  const [currentTags, setCurrentTags] = useState<string[]>([
+    "TypeScript",
     "React",
+    "Next.js",
   ]);
 
-  if (!ok) {
-    return <h1>{err}</h1>;
+  const filteredProjects = useMemo(() => {
+    console.log(currentTags, projects);
+    return projects?.filter((project) => {
+      return (
+        currentTags.every((currentTag) => {
+          return project.tags.some((tag) => currentTag === tag);
+        }) || currentTags.length === 0
+      );
+    });
+  }, [currentTags]);
+
+  function toggleTag(skill: string, isTagCurrent: boolean) {
+    if (isTagCurrent) {
+      return setCurrentTags([...currentTags.filter((t) => t !== skill)]);
+    }
+
+    setCurrentTags([...currentTags, skill]);
   }
 
   return (
@@ -58,43 +63,39 @@ export function ProjectsSection() {
         Основные технологии
       </h3>
       <div className="flex gap-2 flex-wrap">
-        {tags.map((skill) => (
-          <Badge
-            className="text-2xl"
-            variant={
-              currentTag.some((t) => t === skill) ? "default" : "secondary"
-            }
-            onClick={() => {
-              if (currentTag.some((t) => t === skill)) {
-                return setCurrentTag([
-                  ...currentTag.filter((t) => t !== skill),
-                ]);
-              }
+        {tags!.map((skill) => {
+          const isTagCurrent: boolean = currentTags.some((t) => t === skill);
 
-              setCurrentTag([...currentTag, skill]);
-            }}
-            key={skill}
-          >
-            {skill}
-          </Badge>
-        ))}
+          return (
+            <Badge
+              className="text-2xl"
+              variant={isTagCurrent ? "default" : "secondary"}
+              onClick={() => toggleTag(skill, isTagCurrent)}
+              key={skill}
+            >
+              {skill}
+            </Badge>
+          );
+        })}
       </div>
       <div className="border-2 my-5"></div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects!.map((project, index) => (
+        {filteredProjects!.map((project, index) => (
           <Card key={index} className="overflow-hidden">
-            <div className="aspect-video relative">
-              <img
-                src={project.image || "/placeholder.svg"}
-                alt={project.title}
-                className="object-cover"
-              />
-            </div>
+            {project.image && (
+              <div className="aspect-video relative">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="object-cover"
+                />
+              </div>
+            )}
             <CardHeader>
               <CardTitle>{project.title}</CardTitle>
               <CardDescription>{project.description}</CardDescription>
             </CardHeader>
-            <CardContent>
+            <CardContent className="flex flex-col gap-3.5">
               <div className="flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
                   <span
@@ -105,6 +106,14 @@ export function ProjectsSection() {
                   </span>
                 ))}
               </div>
+              <strong className="text-lg font-semibold">
+                Ключевые технические особенности:
+              </strong>
+              <ul className="list-disc mx-5">
+                {project.keyFeatures.map((feature) => (
+                  <li>{feature}</li>
+                ))}
+              </ul>
             </CardContent>
             <CardFooter className="flex justify-between">
               <Button variant="outline" size="sm" asChild>
@@ -116,9 +125,11 @@ export function ProjectsSection() {
                   Код
                 </a>
               </Button>
-              {project.docsId && <Button size="sm" asChild>
-                <a rel="noopener noreferrer">Читать подробнее</a>
-              </Button>}
+              {project.articleId && (
+                <Button size="sm" asChild>
+                  <a href={project.articleId}>Статья на Хабре</a>
+                </Button>
+              )}
             </CardFooter>
           </Card>
         ))}
@@ -126,4 +137,4 @@ export function ProjectsSection() {
       <div className="border-2 my-5"></div>
     </section>
   );
-};
+}
