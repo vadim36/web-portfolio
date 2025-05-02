@@ -24,11 +24,7 @@ export function ProjectsSection() {
     );
   }
 
-  const [currentTags, setCurrentTags] = useState<string[]>([
-    "TypeScript",
-    "React",
-    "Next.js",
-  ]);
+  const [currentTags, setCurrentTags] = useState<string[]>([]);
 
   const filteredProjects = useMemo(() => {
     console.log(currentTags, projects);
