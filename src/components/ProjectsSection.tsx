@@ -1,3 +1,5 @@
+"use client"
+
 import { getProjects } from "@/entities/project";
 import {
   Badge,
@@ -8,7 +10,7 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "../shared";
+} from "@/shared";
 import { useState } from "react";
 
 const tags: string[] = [
