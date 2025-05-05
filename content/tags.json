@@ -1,18 +1,20 @@
 [
-  "JavaScript",
-  "TypeScript",
+  "Javascript",
+  "Typescript",
   "React",
   "Next.js",
   "Node.js",
   "Express",
-  "MongoDB",
-  "PostgreSQL",
   "HTML5",
   "CSS3",
   "Tailwind CSS",
-  "Git",
-  "AWS",
   "Docker",
-  "GraphQL",
-  "REST API"
+  "Zod",
+  "Prisma",
+  "Nest.js",
+  "Vue.js",
+  "SCSS",
+  "Jest",
+  "Bootstrap",
+  "Go"
 ]

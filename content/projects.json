@@ -1,27 +1,112 @@
 [
   {
-    "title": "E-Commerce Platform",
-    "description":
-      "A full-featured online store with payment processing and inventory management.",
-    "tags": ["Next.js", "Stripe", "MongoDB"],
-    "github": "https://github.com/yourusername/project1",
-    "keyFeatures": ["Полная типизация"],
-    "articleId": "e-commerce"
+    "title": "Приложение для продуктивности",
+    "tags": ["Next.js", "Typescript", "Zod", "Prisma", "Nest.js", "Tailwind CSS"],
+    "github": "https://github.com/vadim36/todo-list-next",
+    "keyFeatures": [
+      "Современное SPA с клиентским и серверным рендерингом",
+      "Полная типизация с Typescript и Zod",
+      "FSD архитектура",
+      "Аутентификации, авторизация, основанная на JWT-токенах",
+      "Клиент-серверная коммуникация через CRUD эндпоинты и http протокол"
+    ]
   },
   {
-    "title": "Task Management App",
-    "description":
-      "A collaborative task management tool with real-time updates and team features.",
-    "tags": ["React", "Firebase", "Tailwind CSS"],
-    "keyFeatures": ["Очень быстрая загрузка", "Приятный интерфейс"],
-    "github": "https://github.com/yourusername/project2"  
+    "title": "Приложение для ухода за животными с хакатона Tulahack 24",
+    "tags": ["React", "Typescript", "Node.js", "Express", "Prisma", "Zod", "Tailwind CSS"],
+    "keyFeatures": [
+      "Авторизация и аутенфикация с использованием JWT-токенов", 
+      "Взаимодействие с бд через CRUD",
+      "Полная типизация и валидайия данных через Zod и Typescript, как на клиенте так и на сервере",
+      "Клиентский роутинг",
+      "Множество комплексных форм с валидацией"
+    ],
+    "github": "https://github.com/vadim36/TulaHack-24"  
   },
   {
-    "title": "Portfolio Website",
-    "description":
-      "A responsive portfolio website showcasing projects and skills.",
-    "tags": ["Next.js", "Tailwind CSS", "Framer Motion"],
-    "keyFeatures": ["Анимации"],
-    "github": "https://github.com/yourusername/project3"
+    "title": "Библиотека для роутинга по типу Express",
+    "tags": ["Node.js", "Typescript", "Jest"],
+    "keyFeatures": [
+      "Алгоритм обработки цепи промежуточного ПО(middleware)",
+      "Структурированная обработка энпоинтов",
+      "Обработка событий с использованием Event Emitter",
+      "Покрытие тестами"
+    ],
+    "github": "https://github.com/vadim36/routing-framework"
+  },
+  {
+    "title": "Соцсеть с весеннего хакатона Tulahack 23",
+    "tags": ["Vue.js", "CSS3", "SCSS"],
+    "keyFeatures": [
+      "Клиентский роутинг и авторизация",
+      "бизнес сущность - пост c автоматической модерацией"
+    ],
+    "github": "https://github.com/vadim36/TulaHack23"
+  },
+  {
+    "title": "Соцсеть с осеннего хакатона Tulahack 23",
+    "tags": ["React", "CSS3", "SCSS"],
+    "keyFeatures": [
+      "SPA с обширным взаимодействием данных",
+      "Использование UI библиотек",
+      "Логика общении в чатах"
+    ],
+    "github": "https://github.com/vadim36/TulaHack23-2-"
+  },
+  {
+    "title": "Приложение погоды",
+    "tags": ["React", "Typescript", "Tailwind CSS"],
+    "keyFeatures": [
+      "Полная типизация",
+      "Взаимодействие со стороннем api",
+      "Хук useContext в React",
+      "Кастомный хук с обработкой ошибок api"
+    ],
+    "github": "https://github.com/vadim36/weather-app2"
+  },
+  {
+    "title": "Приложение блокнот",
+    "tags": ["React", "Typescript", "CSS3"],
+    "keyFeatures": [
+      "Фильтрация, поиск, мемоизация и сохранение в состояние данных",
+      "Локальное сохранение данных с кастомных хуком",
+      "Клиентский роутинг",
+      "Рендеринг markdown файлов"
+    ],
+    "github": "https://github.com/vadim36/note-react-wds"
+  },
+  {
+    "title": "Коллекция небольших приложений с DOM манипуляциями",
+    "tags": ["HTML5", "CSS3", "Javascript", "Typescript", "Bootstrap", "SCSS", "Jest"],
+    "keyFeatures": [
+      "ООП приложение для управление пользователями в виде таблицы",
+      "ООП плагин с Select компонентом с адаптивной стилизацией",
+      "Строго типизированная ООП библиотека UI компонентов с иерархической структурой стилей и SCSS паттернами",
+      "Оптимизированные структуры данных с использованием Proxy и Reflect",
+      "Покрытые тестами рекурсивные типизированные функции"
+    ],
+    "github": "https://github.com/vadim36/Small-old-scripts"
+  },
+  {
+    "title": "Сократитель ссылок",
+    "tags": ["Go"],
+    "keyFeatures": [
+      "Настроенный логгер с пакетом slog",
+      "Взаимодействие с база данной Sqlite",
+      "Роутинг с CRUD",
+      "Тесты на моковых данных"
+    ],
+    "github": "https://github.com/vadim36/playground-projects/tree/main/go-test/2__url-shortener"
+  },
+  {
+    "title": "SQL-редактор с весеннего хакатона Tulahack 25",
+    "tags": ["Next.js", "Nest.js", "Zod", "Typescript", "Tailwind CSS", "Prisma", "Docker"],
+    "keyFeatures": [
+      "Строго типизированная клиент-серверная коммуникация",
+      "Авторизация и аутенфикация по ролям",
+      "Создание сложных сущностей через админ панель и отправка их на мобильное приложение",
+      "Логика обработки и рендеринга запросов"
+    ],
+    "github": "https://github.com/vadim36/TulaHack-web-25"
   }
 ]

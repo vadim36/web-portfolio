@@ -4,7 +4,6 @@ import { Maybe } from "@/shared";
 
 const ProjectSchema = z.object({
   title: z.string().min(3).max(64),
-  description: z.string().max(256).optional(),
   tags: z.array(z.string()).nonempty(),
   image: z.string().optional(),
   github: z.string(),

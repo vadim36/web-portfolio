@@ -5,7 +5,6 @@ import {
   Button,
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
@@ -88,7 +87,6 @@ export function ProjectsSection() {
             )}
             <CardHeader>
               <CardTitle>{project.title}</CardTitle>
-              <CardDescription>{project.description}</CardDescription>
             </CardHeader>
             <CardContent className="flex flex-col gap-3.5">
               <div className="flex flex-wrap gap-2">
