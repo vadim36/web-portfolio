@@ -11,18 +11,20 @@ export function ContactSection() {
           </p>
         </div>
         <table className="text-xl text-left">
-          <tr className="md:table-row flex flex-col gap-2">
-            <td className="text-2xl font-semibold md:text-left md:p-2">Email:</td>
-            <td className="md:text-right md:p-2">vadim130809@gmail.com</td>
-          </tr>
-          <tr className="md:table-row flex flex-col gap-2">
-            <td className="text-2xl font-semibold md:text-left md:p-2">Github:</td>
-            <td className="md:text-right md:p-2">vadim36 - https://github.com/vadim36</td>
-          </tr>
-          <tr className="md:table-row flex flex-col gap-2">
-            <td className="text-2xl font-semibold md:text-left md:p-2">Telegram:</td>
-            <td className="md:text-right md:p-2">@iaSGHG</td>
-          </tr>
+          <tbody>
+            <tr className="md:table-row flex flex-col gap-2">
+              <td className="text-2xl font-semibold md:text-left md:p-2">Email:</td>
+              <td className="md:text-right md:p-2">vadim130809@gmail.com</td>
+            </tr>
+            <tr className="md:table-row flex flex-col gap-2">
+              <td className="text-2xl font-semibold md:text-left md:p-2">Github:</td>
+              <td className="md:text-right md:p-2">vadim36 - https://github.com/vadim36</td>
+            </tr>
+            <tr className="md:table-row flex flex-col gap-2">
+              <td className="text-2xl font-semibold md:text-left md:p-2">Telegram:</td>
+              <td className="md:text-right md:p-2">@iaSGHG</td>
+            </tr>
+          </tbody>
         </table>
       </div>
     </section>

@@ -27,7 +27,6 @@ export function ProjectsSection() {
   const [currentTags, setCurrentTags] = useState<string[]>([]);
 
   const filteredProjects = useMemo(() => {
-    console.log(currentTags, projects);
     return projects?.filter((project) => {
       return (
         currentTags.every((currentTag) => {
@@ -76,8 +75,8 @@ export function ProjectsSection() {
       </div>
       <div className="border-2 my-5"></div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {filteredProjects!.map((project, index) => (
-          <Card key={index} className="overflow-hidden">
+        {filteredProjects!.map((project) => (
+          <Card key={project.github} className="overflow-hidden">
             {project.image && (
               <div className="aspect-video relative">
                 <img
@@ -106,8 +105,8 @@ export function ProjectsSection() {
                 Ключевые технические особенности:
               </strong>
               <ul className="list-disc mx-5">
-                {project.keyFeatures.map((feature) => (
-                  <li>{feature}</li>
+                {project.keyFeatures.map((feature, index) => (
+                  <li key={index}>{feature}</li>
                 ))}
               </ul>
             </CardContent>
