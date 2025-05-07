@@ -5,7 +5,7 @@ import { Maybe } from "@/shared";
 const ProjectSchema = z.object({
   title: z.string().min(3).max(64),
   tags: z.array(z.string()).nonempty(),
-  image: z.string().optional(),
+  images: z.array(z.string()).optional(),
   github: z.string(),
   articleId: z.string().optional(),
   keyFeatures: z.array(z.string()),

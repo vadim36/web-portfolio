@@ -16,5 +16,6 @@
   "SCSS",
   "Jest",
   "Bootstrap",
-  "Go"
+  "Go",
+  "Tanstack Query"
 ]

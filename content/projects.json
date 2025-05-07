@@ -1,7 +1,7 @@
 [
   {
     "title": "Приложение для продуктивности",
-    "tags": ["Next.js", "Typescript", "Zod", "Prisma", "Nest.js", "Tailwind CSS"],
+    "tags": ["Next.js", "Typescript", "Zod", "Prisma", "Nest.js", "Tailwind CSS", "Tanstack Query"],
     "github": "https://github.com/vadim36/todo-list-next",
     "keyFeatures": [
       "Современное SPA с клиентским и серверным рендерингом",

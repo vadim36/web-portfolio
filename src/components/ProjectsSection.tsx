@@ -76,15 +76,15 @@ export function ProjectsSection() {
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
         {filteredProjects!.map((project) => (
           <Card key={project.github} className="overflow-hidden">
-            {project.image && (
+            {project.images?.map(image => (
               <div className="aspect-video relative">
                 <img
-                  src={project.image}
-                  alt={project.title}
+                  src={image}
+                  alt={`Интерфейс ${project.title}`}
                   className="object-cover"
                 />
               </div>
-            )}
+            ))}
             <CardHeader>
               <CardTitle>{project.title}</CardTitle>
             </CardHeader>
