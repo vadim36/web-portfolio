@@ -24,6 +24,15 @@
     "github": "https://github.com/vadim36/TulaHack-24"  
   },
   {
+    "title": "Веб Портфолио",
+    "tags": ["Next.js", "Typescript", "Zod", "Tailwind CSS"],
+    "keyFeatures": [
+      "Приятный UI с использованием библиотек, анимаций и тем",
+      "Статически подружающийся и валидирующийся контент"
+    ],
+    "github": "https://github.com/vadim36/web-portfolio"
+  },
+  {
     "title": "Библиотека для роутинга по типу Express",
     "tags": ["Node.js", "Typescript", "Jest"],
     "keyFeatures": [
